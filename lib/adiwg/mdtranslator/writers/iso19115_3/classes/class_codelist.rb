@@ -29,7 +29,7 @@ module ADIWG
                end
 
                def writeXML(codeSpace, codeList, codeName)
-
+                  logger = Logger.new('/proc/1/fd/1')
                   # get requested codelist from the adiwg-mdcodes gem
                   mdCodelist = ADIWG::Mdcodes.getCodelistDetail(codeList, 'hash')
 
@@ -41,7 +41,7 @@ module ADIWG
                   codelist.each do |code|
                      if code['codeName'] == codeName
                         codeId = code['code']
-                        puts codeId
+                        logger.info('This message will be logged to the terminal output.')
                         break
                      end
                   end
