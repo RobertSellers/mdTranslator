@@ -12,6 +12,8 @@
 #  Stan Smith 2014-06-04 add internal object pre-scan to create extents
 #  ... for geometry supplemental information
 # 	Stan Smith 2013-08-10 original script
+# RobertSearch
+
 
 require 'builder'
 require 'adiwg/mdtranslator/writers/iso19115_3/version'
