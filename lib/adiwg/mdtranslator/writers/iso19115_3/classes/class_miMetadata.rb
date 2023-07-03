@@ -152,8 +152,8 @@ module ADIWG
                         codelistClass.writeXML('lan', 'iso_characterSet', 'utf8')
                      end
                      # metadata information - metadata language ('eng; USA')
-                     @xml.tag!('gmd:language') do
-                        @xml.tag!('gco:CharacterString', 'eng; USA')
+                     @xml.tag!('lan:language') do
+                        @xml.tag!('lan:LanguageCode', 'iso_language', 'eng; USA')
                      end
 
                      # metadata information - parent identifier
