@@ -151,31 +151,15 @@ module ADIWG
                      @xml.tag!('lan:characterEncoding') do
                         codelistClass.writeXML('lan', 'iso_characterSet', 'utf8')
                      end
+                     # metadata information - metadata language ('eng; USA')
+                     @xml.tag!('gmd:language') do
+                        @xml.tag!('gco:CharacterString', 'eng; USA')
+                     end
 
                      # metadata information - parent identifier
                      s = nil
                      hParent = hMetaInfo[:parentMetadata]
-                     # unless hParent.empty?
-                     #    s = hParent[:title]
-                     # end
-                     # unless s.nil?
-                     #    @xml.tag!('gmd:parentIdentifier') do
-                     #       @xml.tag!('gco:CharacterString', s)
-                     #    end
-                     # end
-                     # if s.nil? && @hResponseObj[:writerShowTags]
-                     #    @xml.tag!('gmd:parentIdentifier')
-                     # end
 
-                     # metadata information - metadata standard name (default)
-                     # @xml.tag!('gmd:metadataStandardName') do
-                     #    @xml.tag!('gco:CharacterString', 'ISO 19139')
-                     # end
-
-                     # metadata information - metadata standard version (default)
-                     # @xml.tag!('gmd:metadataStandardVersion') do
-                     #    @xml.tag!('gco:CharacterString', 'ISO 19115-3:2016')
-                     # end
 
                   end # gmi:MI_Metadata tag
 
