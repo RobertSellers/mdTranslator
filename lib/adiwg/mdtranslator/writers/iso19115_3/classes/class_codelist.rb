@@ -46,7 +46,7 @@ module ADIWG
                   end
 
                   # generate the iso code block
-                  @xml.tag!(codeSpace + ':' + "#{sourceName}", {:codeList => 'http://localhost:9000/api/v3/codelist?format=xml#' + "#{sourceName}",
+                  @xml.tag!(codeSpace + ':' + "#{sourceName}", {:codeList => 'http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#' + "#{sourceName}",
                                                                 :codeListValue => "#{codeName}",
                                                                 :codeSpace => "#{codeId}"})
                end
