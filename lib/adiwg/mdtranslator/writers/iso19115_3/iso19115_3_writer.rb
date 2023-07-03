@@ -1,4 +1,4 @@
-# Writer - internal data structure to ISO 19115-2:2009
+# Writer - internal data structure to ISO 19115-3:2009
 
 # History:
 #  Stan Smith 2018-04-09 add error/warning/notice message methods
@@ -40,7 +40,7 @@ module ADIWG
                # create new XML document
                @xml = Builder::XmlMarkup.new(indent: 3)
 
-               # start writing the ISO 19115-2 XML record
+               # start writing the ISO 19115-3 XML record
                metadataWriter = MI_Metadata.new(@xml, hResponseObj)
                metadata = metadataWriter.writeXML(intObj)
 

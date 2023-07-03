@@ -4,7 +4,7 @@
 # History:
 #  Stan Smith 2016-11-19 refactored for mdTranslator/mdJson 2.0
 #  Stan Smith 2015-07-14 refactored to eliminate namespace globals $WriterNS and $IsoNS
-#  Stan Smith 2015-07-14 refactored to make iso19110 independent of iso19115_2 classes
+#  Stan Smith 2015-07-14 refactored to make iso19110 independent of Iso19115_3 classes
 #  Stan Smith 2015-06-22 replace global ($response) with passed in object (hResponseObj)
 #  Stan Smith 2015-06-11 refactored to use mdCodes gem for codelist contents
 #  Stan Smith 2014-12-15 replaced NOAA CT_CodelistCatalogue with mdTranslator CT_CodelistCatalogue
@@ -17,7 +17,7 @@ require 'adiwg-mdcodes'
 module ADIWG
    module Mdtranslator
       module Writers
-         module Iso19115_2
+         module Iso19115_3
 
             class MD_Codelist
 
