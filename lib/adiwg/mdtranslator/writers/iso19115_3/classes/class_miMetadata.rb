@@ -79,7 +79,7 @@ module ADIWG
                   codelistClass = MD_Codelist.new(@xml, @hResponseObj)
                   # partyClass = CI_ResponsibleParty.new(@xml, @hResponseObj)
                   # hierarchyClass = Hierarchy.new(@xml, @hResponseObj)
-                  localeClass = PT_Locale.new(@xml, @hResponseObj)
+                  # localeClass = PT_Locale.new(@xml, @hResponseObj)
                   # representationClass = SpatialRepresentation.new(@xml, @hResponseObj)
                   # systemClass = MD_ReferenceSystem.new(@xml, @hResponseObj)
                   # extensionClass = MD_MetadataExtensionInformation.new(@xml, @hResponseObj)
@@ -145,16 +145,22 @@ module ADIWG
                              'xsi:schemaLocation' => "http://standards.iso.org/iso/19115/-3/mdb/2.0 #{remoteSchema}"}) do
 
                      # metadata information - file identifier (default: UUID)
-
+                     s = hMetaInfo[:metadataIdentifier][:identifier]
 
                      # metadata information - metadata character ('utf-8')
+                     @xml.tag!('lan:characterEncoding') do
+                        codelistClass.writeXML('lan', 'iso_characterSet', 'UTF-8')
+                     end
 
-                     # metadata information - metadata language ('eng; USA')
-                     s = intObj[:metadata][:metadataInfo]
-                     codelistClass.writeXML('lan:PT_Locale', s)
-                     localeClass.writeXML('lan:PT_Locale', s)
+                     # metadata information - metadata standard name (default)
+                     # @xml.tag!('gmd:metadataStandardName') do
+                     #    @xml.tag!('gco:CharacterString', 'ISO 19139')
+                     # end
 
-
+                     # metadata information - metadata standard version (default)
+                     @xml.tag!('cit:edition') do
+                        @xml.tag!('gco:CharacterString', 'ISO 19115-3:2016(E)')
+                     end
 
                   end # gmi:MI_Metadata tag
 
