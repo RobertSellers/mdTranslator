@@ -41,6 +41,7 @@ module ADIWG
                   codelist.each do |code|
                      if code['codeName'] == codeName
                         codeId = code['code']
+                        puts codeId
                         break
                      end
                   end
