@@ -30,7 +30,7 @@ module ADIWG
                   @xml.tag!('lan:PT_Locale') do
 
                      # locale - language (required)
-                     s = hLocale[:languageCode]
+                     s = hLocale[:language]
                      unless s.nil?
                         @xml.tag!('lan:languageCode') do
                            codelistClass.writeXML('lan', 'iso_language', s)
@@ -41,7 +41,7 @@ module ADIWG
                      end
 
                      # locale - character encoding (required)
-                     s = hLocale[:characterEncoding]
+                     s = hLocale[:characterSet]
                      unless s.nil?
                         @xml.tag!('lan:characterEncoding') do
                            codelistClass.writeXML('lan', 'iso_characterSet', s)
