@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
    spec.email = ["stansmith@usgs.gov", "joshua_bradley@fws.gov"]
    spec.summary = %q{The mdtranslator (metadata translator) is a tool for translating metadata in one format to another. The tool is written and maintained by the Alaska Data Integration Working Group (ADIwg).}
    spec.description = %q{The mdtranslator was written by the Alaska Data Integration Working Group (ADIwg) to assist with creating ISO 19139 metadata records.  Input to the mdtranslator is JSON conforming to the mdJson-schema.  The mdtranslator architecture allows developers to write additional readers for other input formats and/or write additional writers for other output other than ISO 19139.}
-   spec.homepage = "http://www.adiwg.org/mdTranslator"
+   spec.homepage = "https://github.com/RobertSellers/adiwg-mdtranslator"
    spec.license = "UNLICENSED"
 
    spec.files = %x(git ls-files).split($/).delete_if {|f| /^test*/.match(f)}
@@ -34,8 +34,8 @@ Gem::Specification.new do |spec|
    spec.add_runtime_dependency "thor", "~> 0.19"
    spec.add_runtime_dependency "uuidtools", "~> 2.1"
    spec.add_runtime_dependency "json-schema", "~> 2.7"
-   spec.add_runtime_dependency "adiwg-mdjson_schemas", git:'https://github.com/RobertSellers/mdJson-schemas', branch: 'dsh/combined'
-  spec.add_runtime_dependency "adiwg-mdcodes", git:'https://github.com/RobertSellers/mdCodes', branch: 'dsh/rails'
+   spec.add_runtime_dependency "adiwg-mdjson_schemas", ">= 2.8", git:'https://github.com/RobertSellers/mdJson-schemas', branch: 'dsh/combined'
+  spec.add_runtime_dependency "adiwg-mdcodes", "~> 2.8", git:'https://github.com/RobertSellers/mdCodes', branch: 'dsh/rails'
    # spec.add_runtime_dependency "adiwg-mdjson_schemas", ">= 2.8"
    # spec.add_runtime_dependency "adiwg-mdcodes", "~> 2.8"
    spec.add_runtime_dependency "jbuilder", "~> 2.5"
