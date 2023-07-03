@@ -1,6 +1,6 @@
 # ISO <<CodeLists>>
 
-# from http://mdtranslator.adiwg.org/api/codelists?format=xml
+# from http://localhost:9000/api/v3/codelist?format=xml
 # History:
 #  Stan Smith 2016-11-19 refactored for mdTranslator/mdJson 2.0
 #  Stan Smith 2015-07-14 refactored to eliminate namespace globals $WriterNS and $IsoNS
@@ -46,7 +46,7 @@ module ADIWG
                   end
 
                   # generate the iso code block
-                  @xml.tag!(codeSpace + ':' + "#{sourceName}", {:codeList => 'http://mdtranslator.adiwg.org/api/codelists?format=xml#' + "#{sourceName}",
+                  @xml.tag!(codeSpace + ':' + "#{sourceName}", {:codeList => 'http://localhost:9000/api/v3/codelist?format=xml#' + "#{sourceName}",
                                                                 :codeListValue => "#{codeName}",
                                                                 :codeSpace => "#{codeId}"})
                end
