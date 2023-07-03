@@ -149,11 +149,11 @@ module ADIWG
 
                      # metadata information - metadata character ('utf-8')
                      @xml.tag!('lan:characterEncoding') do
-                        codelistClass.writeXML('lan', 'iso_characterSet', 'utf8')
+                        codelistClass.writeXML('lan', 'iso_characterSet', 'UTF-8')
                      end
                      # metadata information - metadata language ('eng; USA')
                      @xml.tag!('lan:language') do
-                        @xml.tag!('lan:LanguageCode', 'iso_language', 'eng; USA')
+                        codelistClass.writeXML('lan:LanguageCode', 'iso_language', 'eng; USA')
                      end
 
                      # metadata information - parent identifier
