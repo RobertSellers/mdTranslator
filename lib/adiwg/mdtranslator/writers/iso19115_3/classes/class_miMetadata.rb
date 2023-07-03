@@ -149,15 +149,13 @@ module ADIWG
                      # metadata information - metadata character ('utf-8')
                      @xml.tag!('mdb:defaultLocale') do
                         codelistClass.writeXML('lan', 'UTF-8')
-                        @xml.tag!('lan:language') do
-                           @xml.tag!('lan:CharacterString', 'eng; USA')
                         end
    
                         # metadata information - metadata character ('utf-8')
                         @xml.tag!('lan:characterSet') do
                            codelistClass.writeXML('lan', 'iso_characterSet', 'UTF-8')
                         end
-                     end
+                     
 
 
 
