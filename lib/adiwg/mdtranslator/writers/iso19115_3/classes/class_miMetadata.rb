@@ -148,34 +148,34 @@ module ADIWG
                      s = hMetaInfo[:metadataIdentifier][:identifier]
 
                      # metadata information - metadata character ('utf-8')
-                     @xml.tag!('gmd:characterSet') do
-                        codelistClass.writeXML('gmd', 'iso_characterSet', 'UTF-8')
+                     @xml.tag!('lan:characterEncoding') do
+                        codelistClass.writeXML('lan', 'iso_characterSet', 'UTF-8')
                      end
 
                      # metadata information - parent identifier
                      s = nil
                      hParent = hMetaInfo[:parentMetadata]
-                     unless hParent.empty?
-                        s = hParent[:title]
-                     end
-                     unless s.nil?
-                        @xml.tag!('gmd:parentIdentifier') do
-                           @xml.tag!('gco:CharacterString', s)
-                        end
-                     end
-                     if s.nil? && @hResponseObj[:writerShowTags]
-                        @xml.tag!('gmd:parentIdentifier')
-                     end
+                     # unless hParent.empty?
+                     #    s = hParent[:title]
+                     # end
+                     # unless s.nil?
+                     #    @xml.tag!('gmd:parentIdentifier') do
+                     #       @xml.tag!('gco:CharacterString', s)
+                     #    end
+                     # end
+                     # if s.nil? && @hResponseObj[:writerShowTags]
+                     #    @xml.tag!('gmd:parentIdentifier')
+                     # end
 
                      # metadata information - metadata standard name (default)
-                     @xml.tag!('gmd:metadataStandardName') do
-                        @xml.tag!('gco:CharacterString', 'ISO 19139')
-                     end
+                     # @xml.tag!('gmd:metadataStandardName') do
+                     #    @xml.tag!('gco:CharacterString', 'ISO 19139')
+                     # end
 
                      # metadata information - metadata standard version (default)
-                     @xml.tag!('gmd:metadataStandardVersion') do
-                        @xml.tag!('gco:CharacterString', 'ISO 19115-3:2016')
-                     end
+                     # @xml.tag!('gmd:metadataStandardVersion') do
+                     #    @xml.tag!('gco:CharacterString', 'ISO 19115-3:2016')
+                     # end
 
                   end # gmi:MI_Metadata tag
 
