@@ -79,7 +79,7 @@ module ADIWG
                   codelistClass = MD_Codelist.new(@xml, @hResponseObj)
                   # partyClass = CI_ResponsibleParty.new(@xml, @hResponseObj)
                   # hierarchyClass = Hierarchy.new(@xml, @hResponseObj)
-                  # localeClass = PT_Locale.new(@xml, @hResponseObj)
+                  localeClass = PT_Locale.new(@xml, @hResponseObj)
                   # representationClass = SpatialRepresentation.new(@xml, @hResponseObj)
                   # systemClass = MD_ReferenceSystem.new(@xml, @hResponseObj)
                   # extensionClass = MD_MetadataExtensionInformation.new(@xml, @hResponseObj)
@@ -149,11 +149,11 @@ module ADIWG
 
                      # metadata information - metadata character ('utf-8')
                      @xml.tag!('lan:characterEncoding') do
-                        codelistClass.writeXML('lan', 'iso_characterSet', 'UTF-8')
+                        codelistClass.writeXML('lan', 'UTF-8')
                      end
                      # metadata information - metadata language ('eng; USA')
                      @xml.tag!('lan:language') do
-                        codelistClass.writeXML('lan:LanguageCode', 'iso_language', 'eng; USA')
+                        codelistClass.writeXML('lan:LanguageCode','eng')
                      end
 
                      # metadata information - parent identifier
