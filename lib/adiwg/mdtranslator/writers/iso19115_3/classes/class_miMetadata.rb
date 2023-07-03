@@ -144,21 +144,21 @@ module ADIWG
                              'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
                              'xsi:schemaLocation' => "http://standards.iso.org/iso/19115/-3/mdb/2.0 #{remoteSchema}"}) do
 
-                     # metadata information - file identifier (default: UUID)
-                     s = hMetaInfo[:metadataIdentifier][:identifier]
+
 
                      # metadata information - metadata character ('utf-8')
-                     @xml.tag!('lan:characterEncoding') do
+                     @xml.tag!('mdb:defaultLocale') do
                         codelistClass.writeXML('lan', 'UTF-8')
-                     end
-                     # metadata information - metadata language ('eng; USA')
-                     @xml.tag!('lan:language') do
-                        codelistClass.writeXML('lan:LanguageCode','eng')
+                        @xml.tag!('lan:language') do
+                           @xml.tag!('lan:CharacterString', 'eng; USA')
+                        end
+   
+                        # metadata information - metadata character ('utf-8')
+                        @xml.tag!('lan:characterSet') do
+                           codelistClass.writeXML('lan', 'iso_characterSet', 'UTF-8')
+                        end
                      end
 
-                     # metadata information - parent identifier
-                     s = nil
-                     hParent = hMetaInfo[:parentMetadata]
 
 
                   end # gmi:MI_Metadata tag
