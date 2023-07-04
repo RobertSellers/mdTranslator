@@ -245,7 +245,7 @@ messageList:
    - {id: 562, message: "resource-info object is missing"}
 
    - {id: 570, message: "metadata-info object is empty"}
-   - {id: 571, message: "metadata contact is missing"}
+   - {id: 571, message: "metadata error testing"}
 
    - {id: 580, message: "metadata repository object is empty"}
    - {id: 581, message: "metadata repository name is missing"}

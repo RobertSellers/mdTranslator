@@ -93,9 +93,10 @@ module ADIWG
                         end
                      end
                   end
-                  if intMetaInfo[:metadataContacts].empty?
-                     @MessagePath.issueError(571, responseObj, outContext)
-                  end
+                  # RobertTest
+                  # if intMetaInfo[:metadataContacts].empty?
+                  #    @MessagePath.issueError(571, responseObj, outContext)
+                  # end
 
                   # metadata information - metadata dates [] {date}
                   if hMetaInfo.has_key?('metadataDate')
